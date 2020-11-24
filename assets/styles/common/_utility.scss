@@ -1,0 +1,15 @@
+@each $axis in (x, y) {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      .overflow-#{$axis}#{$infix}-hidden {
+        overflow-#{$axis}: hidden;
+      }
+
+      .overflow-#{$axis}#{$infix}-visible {
+        overflow-#{$axis}: visible;
+      }
+    }
+  }
+}

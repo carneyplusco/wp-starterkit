@@ -1,0 +1,17 @@
+html,
+:root {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p:empty {
+  display: none;
+}
+
+.no-transition {
+  transition: none !important;
+}
