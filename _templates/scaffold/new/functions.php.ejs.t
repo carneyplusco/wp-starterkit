@@ -11,6 +11,8 @@ to: functions.php
  * @since 1.0.0
  */
 
+define('LOCAL_DOMAIN', '<%= h.changeCase.param(theme_name) %>.local');
+
 /**
  * Includes
  */
@@ -43,7 +45,7 @@ add_theme_support('editor-color-palette', array(<% theme_colors.filter(color => 
 function asset_path($path) {
 	global $manifest;
 
-	$is_dev = $_SERVER['HTTP_HOST'] == '<%= h.changeCase.param(theme_name) %>.local';
+	$is_dev = $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN;
 	if (!$is_dev):
 		if (empty($manifest)):
 			$manifest_path = dirname(__FILE__) . '/dist/manifest.json';
