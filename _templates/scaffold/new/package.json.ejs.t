@@ -50,7 +50,7 @@ to: package.json
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
     "watch": "NODE_ENV=production webpack --config webpack.prod.js --mode development --watch",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js --mode production",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js --mode production"
   },
   "browserslist": [
     "last 2 versions",
