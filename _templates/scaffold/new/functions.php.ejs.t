@@ -47,14 +47,15 @@ function asset_path($path) {
 
 	$is_dev = $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN;
 	if (!$is_dev):
-		if (empty($manifest)):
+    if (empty($manifest)):
 			$manifest_path = dirname(__FILE__) . '/dist/manifest.json';
 			$manifest = file_exists($manifest_path) ? json_decode(file_get_contents($manifest_path), true) : [];
-		endif;
-		$path = $manifest[$path] ?? $path;
+    endif;
+    $filename = pathinfo($path)['basename'];
+    $path = $manifest[$filename] ?? $path;
 	endif;
 
-	$asset_path = $is_dev ? 'http://localhost:9000' : get_stylesheet_directory_uri();
+	$asset_path = $is_dev ? 'http://localhost:9000/assets' : get_stylesheet_directory_uri();
 	return "$asset_path/$path";
 }
 
