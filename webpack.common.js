@@ -28,7 +28,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "../",
+              publicPath: process.env.NODE_ENV === "production" ? "./" : "../",
             },
           },
           {
