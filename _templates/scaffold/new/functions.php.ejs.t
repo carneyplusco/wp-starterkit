@@ -57,6 +57,29 @@ function asset_path($path) {
 }
 
 /**
+ * Inline SVG helper
+ */
+
+function is_dev($ignore_dist = false) {
+  $test_dist = $ignore_dist || !file_exists(dirname(__FILE__) . '/dist/');
+  return $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN && $test_dist;
+}
+
+function inline_svg($path) {
+  $is_dev = is_dev();
+  $is_local = is_dev(true /* ignore dist */);
+  $asset_path = asset_path($path);
+  $svg_path = $is_dev ? str_replace('http://localhost:9000', dirname(__FILE__), $asset_path) : $asset_path;
+  $stream_context = $is_local ? stream_context_create([
+    'ssl' => [
+      'verify_peer'=> false,
+      'verify_peer_name'=> false,
+    ]
+  ]) : null;
+  return file_get_contents($svg_path, false, $stream_context);
+}
+
+/**
  * Setup theme
  */
 add_action('init', function() {
