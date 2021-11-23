@@ -3,6 +3,11 @@ html,
   scroll-behavior: smooth;
 }
 
+body {
+  // Prevent .alignfull from adding a horizontal scrollbar
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   height: auto;

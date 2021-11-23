@@ -36,7 +36,8 @@ to: composer.json
     "wpackagist-plugin/wordfence": "^7.4",
     "wpackagist-plugin/wp-mail-smtp": "^2.1",
     "wpackagist-plugin/duracelltomi-google-tag-manager": "^1.11",
-    "wpackagist-plugin/google-analytics-for-wordpress": "^7.11"
+    "wpackagist-plugin/google-analytics-for-wordpress": "^7.11",
+    "wpackagist-plugin/simple-custom-post-order": "^2.5"
   },
   "extra": {
     "installer-paths": {
