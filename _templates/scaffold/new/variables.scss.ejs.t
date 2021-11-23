@@ -17,7 +17,6 @@ $h6-font-size: $font-size-base; // 16px
 $lead-font-size: 1.5 * $font-size-base;
 
 /** Colors */
-
 <% theme_colors.filter(color => color !== '').forEach(color => { %><% const [colorName, colorHex] = color.split(': ') %>
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
 
