@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "no-console": "error"
+  },
+  "env": {
+    "node": true,
+    "jquery": true,
+    "amd": true,
+    "browser": true,
+    "es6": true
+  }
+}
