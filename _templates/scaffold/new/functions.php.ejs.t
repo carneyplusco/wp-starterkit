@@ -106,9 +106,6 @@ add_action('init', function() {
    */
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
-  /* Remove default Block Editor patterns */
-	remove_theme_support( 'core-block-patterns' );
-
   /**
    * Enable Block Editor features
    */
