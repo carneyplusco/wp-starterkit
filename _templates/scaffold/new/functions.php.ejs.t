@@ -107,15 +107,18 @@ add_action('init', function() {
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
   /**
-   * Enable Block Editor features
+   * Block editor features
    */
-  add_theme_support('align-wide');
-  add_theme_support('editor-styles');
-  add_editor_style(asset_path('styles/main.css'));
+  add_theme_support("align-wide");
+  add_theme_support("disable-custom-font-sizes");
+  remove_theme_support("core-block-patterns");
+
+  add_theme_support("editor-styles");
+  add_editor_style(asset_path("styles/main.css"));
 });
 
 /**
- * Enqueue editor assets
+ * Enqueue additional block editor assets
  */
 add_action('enqueue_block_editor_assets', '<%= h.changeCase.snake(theme_name) %>_custom_block_styles');
 function <%= h.changeCase.snake(theme_name) %>_custom_block_styles($hook) {
