@@ -36,7 +36,6 @@ to: package.json
     "postcss-loader": "^2.1.3",
     "prettier": "^2.5.1",
     "prettier-eslint": "^11.0.0",
-    "resolve-url-loader": "^3.1.1",
     "sass-loader": "^6.0.7",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.3",
