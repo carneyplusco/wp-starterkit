@@ -45,8 +45,8 @@ add_theme_support('editor-color-palette', array(<% theme_colors.filter(color => 
 function asset_path($path) {
 	global $manifest;
 
-	$is_dev = $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN;
-	if (!$is_dev):
+	$is_local = is_local();
+	if (!$is_local):
     if (empty($manifest)):
 			$manifest_path = dirname(__FILE__) . '/dist/manifest.json';
 			$manifest = file_exists($manifest_path) ? json_decode(file_get_contents($manifest_path), true) : [];
@@ -55,7 +55,7 @@ function asset_path($path) {
     $path = $manifest[$filename] ?? $path;
 	endif;
 
-	$asset_path = $is_dev ? 'http://localhost:9000/assets' : get_stylesheet_directory_uri();
+	$asset_path = $is_local ? 'http://localhost:9000/assets' : get_stylesheet_directory_uri();
 	return "$asset_path/$path";
 }
 
@@ -63,16 +63,15 @@ function asset_path($path) {
  * Inline SVG helper
  */
 
-function is_dev($ignore_dist = false) {
-  $test_dist = $ignore_dist || !file_exists(dirname(__FILE__) . '/dist/');
-  return $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN && $test_dist;
+function is_local() {
+  $is_dev = in_array(wp_get_environment_type(), ['local', 'development']);
+  return $is_dev && $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN;
 }
 
 function inline_svg($path) {
-  $is_dev = is_dev();
-  $is_local = is_dev(true /* ignore dist */);
+  $is_local = is_local();
   $asset_path = asset_path($path);
-  $svg_path = $is_dev ? str_replace('http://localhost:9000', dirname(__FILE__), $asset_path) : $asset_path;
+  $svg_path = $is_local ? str_replace('http://localhost:9000', dirname(__FILE__), $asset_path) : $asset_path;
   $stream_context = $is_local ? stream_context_create([
     'ssl' => [
       'verify_peer'=> false,

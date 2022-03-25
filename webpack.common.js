@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
     editor: ["./assets/scripts/editor.js", "./assets/styles/editor.scss"],
-    main: ["./assets/scripts/main.js", "./assets/styles/main.scss"]
+    main: ["./assets/scripts/main.js", "./assets/styles/main.scss"],
   },
   externals: {
     jquery: "jQuery",
@@ -38,10 +38,12 @@ module.exports = {
             loader: "postcss-loader",
           },
           {
-            loader: "resolve-url-loader",
-          },
-          {
             loader: "sass-loader",
+            options: {
+              sassOptions: {
+                quietDeps: true,
+              },
+            },
           },
         ],
       },
