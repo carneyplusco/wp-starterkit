@@ -68,8 +68,6 @@ $spacers: (
 /** Utility */
 $overflows: auto, hidden, visible;
 
-/** Hamburgers */
-
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
