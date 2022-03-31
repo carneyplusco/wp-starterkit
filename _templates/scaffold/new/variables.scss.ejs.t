@@ -7,6 +7,7 @@ $font-serif: "Helvetica Neue", Arial, sans-serif;
 $font-family-base: $font-serif;
 $enable-responsive-font-sizes: true;
 
+$rem-base: 16px;
 $font-size-base: 1rem;
 $h1-font-size: $font-size-base * 3; // 48px
 $h2-font-size: $font-size-base * 2.25; // 36px
