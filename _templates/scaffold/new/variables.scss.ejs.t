@@ -74,15 +74,28 @@ $navbar-light-toggler-icon-bg: none;
 
 /** Buttons */
 /*
-$btn-border-radius: 0.353rem; // 6px
-$btn-font-size: 1.125rem; // 18px
-$btn-font-weight: 600;
+$btn-font-weight: 500;
+$btn-box-shadow: none;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+
+$btn-border-radius: 0;
+$btn-font-size: 1rem; // 16px
 $btn-line-height: 1;
-$btn-padding-y: 0.875rem; // 14px
-$btn-padding-x: 1.25rem; // 20px
-$btn-padding-y-sm: .75rem; // 12px
-$btn-padding-x-sm: 1rem;
-$btn-font-size-sm: 1rem;
-$btn-line-height-sm: 1;
+$btn-padding-y: 0.75rem; // 12px
+$btn-padding-x: 1.5rem; // 24px
+
+$btn-border-radius-lg: 0;
+$btn-font-size-lg: 1.125rem; // 18px
+$btn-line-height-lg: 1;
+$btn-padding-y-lg: 1rem; // 16px
+$btn-padding-x-lg: 2rem; // 32px
+
 $btn-border-radius-sm: 0;
+$btn-font-size-sm: 0.875rem; // 14px
+$btn-line-height-sm: 1;
+$btn-padding-y-sm: 0.5rem; // 8px
+$btn-padding-x-sm: 1rem; // 16px
+
+$btn-link-color: $gray-dark;
 */
