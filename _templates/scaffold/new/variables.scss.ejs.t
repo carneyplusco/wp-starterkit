@@ -63,7 +63,7 @@ $spacers: (
   xl: $spacer * 10,
 );
 
-# $negative-spacers: negativify-map($spacers);
+/* $negative-spacers: negativify-map($spacers); */
 
 /** Utility */
 $overflows: auto, hidden, visible;
