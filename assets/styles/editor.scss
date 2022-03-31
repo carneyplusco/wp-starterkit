@@ -72,4 +72,10 @@ body {
     padding: 0;
     max-width: unset;
   }
+
+  // Remove underlines from ACF links, such as when it's in a plus icon of a repeater
+  .acf-fields a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 }
