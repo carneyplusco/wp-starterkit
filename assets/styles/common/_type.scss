@@ -10,3 +10,15 @@
     }
   }
 }
+
+.is-style-lead {
+  font-size: $lead-font-size;
+}
+
+.is-style-small {
+  font-size: $small-font-size;
+}
+
+mark {
+  padding: 0;
+}
