@@ -5,31 +5,6 @@ to: assets/styles/common/_variables.scss
 @import "bootstrap/scss/functions";
 @import "functions";
 
-
-/** Fonts */
-$enable-responsive-font-sizes: true;
-$font-serif: Georgia, serif;
-$font-sans: "Helvetica Neue", Arial, sans-serif;
-$font-family-base: $font-sans;
-/* $line-height-base: 1.5; */
-
-$rem-base: 16px;
-$font-size-base: 1rem;
-$h1-font-size: rem(48);
-$h2-font-size: rem(36);
-$h3-font-size: rem(28);
-$h4-font-size: rem(24);
-$h5-font-size: rem(20);
-$h6-font-size: $font-size-base;
-
-$headings-font-family: $font-serif;
-$headings-font-weight: 300;
-/* $headings-line-height: 1.2; */
-/* $headings-margin-bottom: .5rem; */
-
-/* $paragraph-margin-bottom: 1rem; */
-$lead-font-size: rem(24);
-
 /** Colors */
 <% theme_colors.filter(color => color !== '').forEach(color => { %><% const [colorName, colorHex] = color.split(': ') %>
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
@@ -70,6 +45,39 @@ $utilities-border-colors: $theme-colors;
 $utilities-text-colors: $theme-colors;
 $utilities-bg-colors: $theme-colors;
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+/** Fonts */
+$enable-responsive-font-sizes: true;
+$font-serif: Georgia, serif;
+$font-sans: "Helvetica Neue", Arial, sans-serif;
+$font-family-base: $font-sans;
+/* $line-height-base: 1.5; */
+
+$rem-base: 16px;
+$font-size-base: 1rem;
+$h1-font-size: rem(48);
+$h2-font-size: rem(36);
+$h3-font-size: rem(28);
+$h4-font-size: rem(24);
+$h5-font-size: rem(20);
+$h6-font-size: $font-size-base;
+
+$headings-font-family: $font-serif;
+$headings-font-weight: 300;
+/* $headings-line-height: 1.2; */
+/* $headings-color: $primary; */
+/* $headings-margin-bottom: .5rem; */
+
+/*
+$display-font-sizes: (
+  1: 5rem
+);
+$display-font-weight: 800;
+$display-line-height: $headings-line-height;
+*/
+
+/* $paragraph-margin-bottom: 1rem; */
+$lead-font-size: rem(24);
 
 /** Grid */
 $grid-gutter-width: 1rem;
