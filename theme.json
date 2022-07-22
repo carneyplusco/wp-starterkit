@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "1240px",
+      "wideSize": "1240px"
+    },
+    "typography": {
+			"dropCap": false,
+      "fontFamilies": [
+        {
+          "name": "Sans Serif",
+          "slug": "serif",
+          "fontFamily": "\"Georgia\", serif"
+        },
+        {
+          "name": "Sans",
+          "slug": "sans",
+          "fontFamily": "\"Helvetica Neue\", Arial, sans-serif"
+        }
+      ]
+    },
+    "color": {
+      "defaultPalette": false
+    }
+  }
+}
