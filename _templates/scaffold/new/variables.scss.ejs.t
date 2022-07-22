@@ -1,41 +1,73 @@
 ---
 to: assets/styles/common/_variables.scss
 ---
+/** Necessary for the negative map function & font sizing */
+@import "bootstrap/scss/functions";
+@import "functions";
+
+
 /** Fonts */
+$enable-responsive-font-sizes: true;
 $font-serif: "Georgia", serif;
 $font-sans: "Helvetica Neue", Arial, sans-serif;
-$enable-responsive-font-sizes: true;
-
 $font-family-base: $font-sans;
-$headings-font-family: $font-serif;
-$headings-font-weight: 300;
+# $line-height-base: 1.5;
 
 $rem-base: 16px;
 $font-size-base: 1rem;
-$h1-font-size: $font-size-base * 3; // 48px
-$h2-font-size: $font-size-base * 2.25; // 36px
-$h3-font-size: $font-size-base * 1.75; // 28px
-$h4-font-size: $font-size-base * 1.5; // 24px
-$h5-font-size: $font-size-base * 1.25; // 20px
-$h6-font-size: $font-size-base; // 16px
-$lead-font-size: $font-size-base * 1.5; // 24px
+$h1-font-size: rem(48);
+$h2-font-size: rem(36);
+$h3-font-size: rem(28);
+$h4-font-size: rem(24);
+$h5-font-size: rem(20);
+$h6-font-size: $font-size-base;
+
+$headings-font-family: $font-serif;
+$headings-font-weight: 300;
+# $headings-line-height: 1.2;
+# $headings-margin-bottom: .5rem;
+
+# $paragraph-margin-bottom: 1rem;
+$lead-font-size: rem(24);
 
 /** Colors */
 <% theme_colors.filter(color => color !== '').forEach(color => { %><% const [colorName, colorHex] = color.split(': ') %>
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
 
+# $primary: ;
+# $secondary: ;
+# $dark: ;
+# $light: ;
+
+# $body-color: ;
+# $link-color: ;
+# $color-contrast-dark: $black;
+# $color-contrast-light: $white;
+
+# $info: ;
+# $success: ;
+# $warn: ;
+# $danger: ;
+
 /*
 $theme-colors: (
-  white: ,
-  light: ,
-  dark: ,
-  black: ,
-  primary: ,
-  secondary: ,
-  warn: ,
-  info: ,
+  primary: $primary,
+  secondary: $secondary,
+  dark: $dark,
+  light: $light,
+  white: $white,
+  black: $black,
+  info: $info,
+  success: $success,
+  warn: $warn,
+  danger: $danger,
 );
 */
+
+$utilities-border-colors: $theme-colors;
+$utilities-text-colors: $theme-colors;
+$utilities-bg-colors: $theme-colors;
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 /** Grid */
 $grid-gutter-width: 1rem;
@@ -47,7 +79,14 @@ $grid-breakpoints: (
   xl: 1144px,
 );
 
+# Remove other breakpoints so its a smooth transition between sizes
+$container-max-width: rem(1240);
+$container-max-widths: (
+  sm: 1240px,
+);
+
 /** Spacing */
+$enable-negative-margins: false;
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -62,8 +101,8 @@ $spacers: (
   lg: $spacer * 8,
   xl: $spacer * 10,
 );
-
-/* $negative-spacers: negativify-map($spacers); */
+$negative-spacers: negativify-map($spacers);
+$gutters: $spacers;
 
 /** Utility */
 $overflows: auto, hidden, visible;
@@ -80,22 +119,45 @@ $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 
 $btn-border-radius: 0;
-$btn-font-size: 1rem; // 16px
+$btn-font-size: 1rem;
 $btn-line-height: 1;
-$btn-padding-y: 0.75rem; // 12px
-$btn-padding-x: 1.5rem; // 24px
+$btn-padding-y: rem(12);
+$btn-padding-x: rem(24);
 
 $btn-border-radius-lg: 0;
-$btn-font-size-lg: 1.125rem; // 18px
+$btn-font-size-lg: rem(18);
 $btn-line-height-lg: 1;
-$btn-padding-y-lg: 1rem; // 16px
-$btn-padding-x-lg: 2rem; // 32px
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: rem(32);
 
 $btn-border-radius-sm: 0;
-$btn-font-size-sm: 0.875rem; // 14px
+$btn-font-size-sm: rem(14);
 $btn-line-height-sm: 1;
-$btn-padding-y-sm: 0.5rem; // 8px
-$btn-padding-x-sm: 1rem; // 16px
+$btn-padding-y-sm: rem(8)
+$btn-padding-x-sm: 1rem;
 
-$btn-link-color: $gray-dark;
+$btn-link-color: $link-color;
+*/
+
+/** Cards */
+/* $card-bg: $white;
+$card-cap-bg: $card-bg;
+$card-spacer-y: rem(20);
+$card-spacer-x: rem(20);
+$card-title-spacer-y: rem(8);
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
+$card-border-width: 0;
+*/
+
+/** Forms **/
+/*
+$input-border-radius: 0.75rem;
+$input-font-size: 1rem;
+$input-padding-y: 1.125rem;
+$input-padding-x: 1.5rem;
+$input-border-width: rem(1);
+$input-border-color: $light;
+$input-focus-border-color: $dark;
+$input-focus-box-shadow: none;
 */

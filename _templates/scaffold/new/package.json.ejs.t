@@ -7,7 +7,7 @@ to: package.json
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.2.0",
     "core-js": "^3.6.5",
     "hamburgers": "^1.1.3",
     "jquery": "^3.5.1",
