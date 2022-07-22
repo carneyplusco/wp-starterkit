@@ -8,7 +8,7 @@ to: assets/styles/common/_variables.scss
 
 /** Fonts */
 $enable-responsive-font-sizes: true;
-$font-serif: "Georgia", serif;
+$font-serif: Georgia, serif;
 $font-sans: "Helvetica Neue", Arial, sans-serif;
 $font-family-base: $font-sans;
 # $line-height-base: 1.5;
