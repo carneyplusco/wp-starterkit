@@ -11,7 +11,7 @@ $enable-responsive-font-sizes: true;
 $font-serif: Georgia, serif;
 $font-sans: "Helvetica Neue", Arial, sans-serif;
 $font-family-base: $font-sans;
-# $line-height-base: 1.5;
+/* $line-height-base: 1.5; */
 
 $rem-base: 16px;
 $font-size-base: 1rem;
@@ -24,32 +24,32 @@ $h6-font-size: $font-size-base;
 
 $headings-font-family: $font-serif;
 $headings-font-weight: 300;
-# $headings-line-height: 1.2;
-# $headings-margin-bottom: .5rem;
+/* $headings-line-height: 1.2; */
+/* $headings-margin-bottom: .5rem; */
 
-# $paragraph-margin-bottom: 1rem;
+/* $paragraph-margin-bottom: 1rem; */
 $lead-font-size: rem(24);
 
 /** Colors */
 <% theme_colors.filter(color => color !== '').forEach(color => { %><% const [colorName, colorHex] = color.split(': ') %>
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
 
-# $primary: ;
-# $secondary: ;
-# $dark: ;
-# $light: ;
-
-# $body-color: ;
-# $link-color: ;
-# $color-contrast-dark: $black;
-# $color-contrast-light: $white;
-
-# $info: ;
-# $success: ;
-# $warn: ;
-# $danger: ;
-
 /*
+$primary: ;
+$secondary: ;
+$dark: ;
+$light: ;
+
+$body-color: ;
+$link-color: ;
+$color-contrast-dark: $black;
+$color-contrast-light: $white;
+
+$info: ;
+$success: ;
+$warn: ;
+$danger: ;
+
 $theme-colors: (
   primary: $primary,
   secondary: $secondary,
@@ -79,7 +79,7 @@ $grid-breakpoints: (
   xl: 1144px,
 );
 
-# Remove other breakpoints so its a smooth transition between sizes
+/* Remove other breakpoints so its a smooth transition between sizes */
 $container-max-width: rem(1240);
 $container-max-widths: (
   sm: 1240px,
