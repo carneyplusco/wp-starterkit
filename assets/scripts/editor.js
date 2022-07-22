@@ -25,4 +25,11 @@ wp.domReady(() => {
       label: "Lead",
     },
   ]);
+
+  wp.blocks.registerBlockStyle("core/paragraph", [
+    {
+      name: "small",
+      label: "Small",
+    },
+  ]);
 });
