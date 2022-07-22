@@ -111,6 +111,33 @@ $overflows: auto, hidden, visible;
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
 
+/** Accordions */
+/*
+$accordion-padding-y: 0;
+$accordion-padding-x: 0;
+$accordion-color: $body-color;
+$accordion-bg: transparent;
+$accordion-border-width: 0;
+$accordion-border-radius: 0;
+$accordion-inner-border-radius: 0;
+$accordion-body-padding-y: 1rem;
+$accordion-body-padding-x: 0;
+$accordion-button-padding-y: 0;
+$accordion-button-padding-x: 0;
+$accordion-button-color: $primary;
+$accordion-button-bg: $accordion-bg;
+$accordion-transition: none;
+$accordion-button-active-bg: transparent;
+$accordion-button-active-color: $primary;
+$accordion-icon-width: 1em;
+$accordion-icon-color: $accordion-button-color;
+$accordion-icon-active-color: $accordion-button-active-color;
+$accordion-icon-transition: none;
+$accordion-icon-transform: none;
+$accordion-button-icon: none;
+$accordion-button-active-icon: none;
+*/
+
 /** Buttons */
 /*
 $btn-font-weight: 500;
