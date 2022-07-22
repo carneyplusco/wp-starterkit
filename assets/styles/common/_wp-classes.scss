@@ -6,10 +6,34 @@
 /** Color classes */
 @each $infix,
 $color in $theme-colors {
+
+  // Basic coloring
   .has-#{"" + $infix}-color {
     color: $color  !important;
+
+    a {
+      @extend .link-#{"" + $infix};
+    }
   }
 
+  // Inline links
+  a mark.has-inline-color.has-#{"" + $infix}-color {
+    @extend .link-#{"" + $infix};
+    text-decoration: underline;
+  }
+
+  a {
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      mark.has-inline-color.has-#{"" + $infix}-color {
+        color: if(color-contrast($color)==$color-contrast-light, shade-color($color, $link-shade-percentage), tint-color($color, $link-shade-percentage)) !important;
+      }
+    }
+  }
+
+  // Background colors
   .has-#{"" + $infix}-background-color {
     background-color: $color  !important;
   }
