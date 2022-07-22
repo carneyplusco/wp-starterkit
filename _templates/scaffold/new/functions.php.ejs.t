@@ -113,7 +113,7 @@ add_action('init', function() {
   remove_theme_support("core-block-patterns");
 
   add_theme_support("editor-styles");
-  add_editor_style(asset_path("styles/editor.css"));
+  add_editor_style(asset_path("styles/main.css"));
 });
 
 /**

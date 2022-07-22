@@ -1,0 +1,34 @@
+// Style individual components at the component-level SCSS file by using body.editor-styles-wrapper{} as a wrapper
+body.editor-styles-wrapper {
+	overflow-x: hidden;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.block-editor-block-list__layout {
+
+	[data-align="full"],
+	.alignfull {
+		width: 100% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	// Remove underlines from ACF links, such as when it's in a plus icon of a repeater
+	.acf-fields a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	.acf-block-preview .card {
+		margin-top: 0;
+		padding: 0;
+		max-width: unset;
+		box-shadow: none;
+
+		// Disable linked header images, titles, and buttons in cards to not accidentally click away
+		a {
+			pointer-events: none;
+		}
+	}
+}
