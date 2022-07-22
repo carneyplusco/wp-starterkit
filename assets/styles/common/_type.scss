@@ -3,8 +3,9 @@
     @extend .h#{$i} !optional;
   }
 
-  @each $infix, $color in $theme-colors {
-    .text-#{$infix} h#{$i} {
+  @each $infix,
+  $color in $theme-colors {
+    .text-#{"" + $infix} h#{$i} {
       color: $color;
     }
   }

@@ -4,13 +4,14 @@
  */
 
 /** Color classes */
-@each $infix, $color in $theme-colors {
-  .has-#{$infix}-color {
-    color: $color !important;
+@each $infix,
+$color in $theme-colors {
+  .has-#{"" + $infix}-color {
+    color: $color  !important;
   }
 
-  .has-#{$infix}-background-color {
-    background-color: $color !important;
+  .has-#{"" + $infix}-background-color {
+    background-color: $color  !important;
   }
 }
 
