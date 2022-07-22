@@ -35,6 +35,8 @@ $lead-font-size: rem(24);
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
 
 /*
+// This comment block must be completed before `npm run start` can be performed; then you need to delete this line. Bai. :'(
+
 $primary: ;
 $secondary: ;
 $dark: ;
