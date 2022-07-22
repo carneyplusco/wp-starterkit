@@ -77,7 +77,9 @@ $display-line-height: $headings-line-height;
 */
 
 /* $paragraph-margin-bottom: 1rem; */
-$lead-font-size: rem(24);
+$lead-font-size: rem(34);
+$small-font-size: rem(14);
+$input-btn-font-size: $font-size-base;
 
 /** Grid */
 $grid-gutter-width: 1rem;
@@ -149,8 +151,8 @@ $accordion-button-active-icon: none;
 */
 
 /** Buttons */
-/*
-$btn-font-weight: 500;
+$btn-font-weight: 700;
+$btn-border-width: rem(2);
 $btn-box-shadow: none;
 $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
@@ -161,20 +163,23 @@ $btn-line-height: 1;
 $btn-padding-y: rem(12);
 $btn-padding-x: rem(24);
 
+/*
 $btn-border-radius-lg: 0;
 $btn-font-size-lg: rem(18);
 $btn-line-height-lg: 1;
 $btn-padding-y-lg: 1rem;
 $btn-padding-x-lg: rem(32);
+*/
 
+/*
 $btn-border-radius-sm: 0;
-$btn-font-size-sm: rem(14);
+$btn-font-size-sm: $small-font-size;
 $btn-line-height-sm: 1;
-$btn-padding-y-sm: rem(8)
+$btn-padding-y-sm: rem(8);
 $btn-padding-x-sm: 1rem;
+*/
 
 $btn-link-color: $link-color;
-*/
 
 /** Cards */
 /* $card-bg: $white;

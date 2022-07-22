@@ -1,0 +1,125 @@
+/*
+Bootstrap Button Style Overrides
+*/
+.btn {
+	text-transform: uppercase;
+	display: inline-flex;
+	align-items: center;
+	border-style: solid;
+}
+
+.btn-primary {
+	background-color: $primary;
+	color: $white;
+	border-color: transparent;
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		color: $primary;
+		border-color: $primary;
+		background-color: $white;
+	}
+}
+
+.btn-outline-primary {
+	color: $primary;
+	border-color: $primary;
+	background-color: $white;
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		background-color: $primary;
+		color: $white;
+		border-color: $primary;
+	}
+}
+
+.btn-link {
+	font-weight: $font-weight-bold;
+	padding: 0;
+	text-decoration: none;
+	line-height: 1;
+}
+
+/*
+Gutenberg Button Style Overrides
+*/
+.wp-block-button {
+	&__link {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+
+	&.is-style-fill {
+		.wp-block-button__link {
+
+			// Hover/focus states
+			@each $infix,
+			$color in $theme-colors {
+				&.has-background.has-#{"" + $infix}-background-color {
+					color: $white;
+					border-color: $color  !important;
+					background-color: $color  !important;
+
+					&:hover,
+					&:focus,
+					&:focus-visible {
+						color: $color;
+						border-color: $color  !important;
+						background-color: $white  !important;
+					}
+				}
+
+				&.has-text-color.has-#{"" + $infix}-color {
+					color: $color  !important;
+
+					&:hover,
+					&:focus,
+					&:focus-visible {
+						color: if(color-contrast($color)==$color-contrast-light,
+								shade-color($color, $link-shade-percentage),
+								tint-color($color, $link-shade-percentage)) !important;
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-outline {
+		.wp-block-button__link {
+			@extend .btn-outline-primary;
+
+			// Hover/focus states
+			@each $infix,
+			$color in $theme-colors {
+				&.has-#{"" + $infix}-color {
+					border-color: $color  !important;
+
+					&:hover,
+					&:focus,
+					&:focus-visible {
+						color: $white  !important;
+						background-color: $color  !important;
+					}
+				}
+			}
+
+			// Hovers/focus states for btns with transparent backgrounds & white text
+			@each $infix,
+			$color in $theme-colors {
+				&.has-transparent-background-color.has-white-color {
+
+					&:hover,
+					&:focus,
+					&:focus-visible {
+						color: $primary  !important;
+						background-color: $white  !important;
+						border-color: $white  !important;
+					}
+				}
+			}
+		}
+	}
+}
