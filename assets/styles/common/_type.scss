@@ -12,11 +12,11 @@
 }
 
 .is-style-lead {
-  font-size: $lead-font-size;
+  @extend .lead;
 }
 
 .is-style-small {
-  font-size: $small-font-size;
+  @extend .small;
 }
 
 mark {
