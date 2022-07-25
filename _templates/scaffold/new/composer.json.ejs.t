@@ -36,7 +36,7 @@ to: composer.json
     "wpackagist-plugin/duracelltomi-google-tag-manager": "^1.14",
     "wpackagist-plugin/simple-custom-post-order": "^2.5",
     "wpackagist-plugin/seo-by-rank-math": "^1.0",
-    "wpackagist-plugin/contact-form-entries": "^1.2"
+    "wpackagist-plugin/contact-form-entries": "^1.2",
     "wpackagist-plugin/custom-block-patterns": "^1.4"
   },
   "extra": {
