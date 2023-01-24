@@ -1,12 +1,11 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage",
-        "corejs": "3.0.0"
-      }
-    ],
-    "@babel/preset-react"
-  ]
+	"env": {
+		"development": {
+			"plugins": []
+		},
+		// remove console logs in production for... reasons...
+		"production": {
+			// "plugins": ["transform-remove-console"]
+		}
+	}
 }

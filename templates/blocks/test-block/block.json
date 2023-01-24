@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wp-starterkit/test-block",
+	"title": "Test Block",
+	"description": "Example of custom block with block.json",
+	"category": "custom",
+	"editorScript": "file:./editor.js",
+    "script": "file:./test-block.js",
+    "style": "file:./test-block.css",
+	"render": "file:./test-block.php"
+}
