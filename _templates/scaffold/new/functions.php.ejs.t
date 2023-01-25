@@ -92,6 +92,10 @@ add_action('init', function() {
 
   add_theme_support("editor-styles");
 
+	if (!is_user_logged_in()) {
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', false);
+	}
 });
 
 /**
@@ -109,7 +113,7 @@ function <%= h.changeCase.snake(theme_name) %>_custom_block_styles($hook) {
 add_action('wp_enqueue_scripts', '<%= h.changeCase.snake(theme_name) %>_enqueue_assets', 15);
 function <%= h.changeCase.snake(theme_name) %>_enqueue_assets() {
 	wp_enqueue_style('<%= h.changeCase.param(theme_name) %>-css', asset_path('styles/main.css'), array(), <%= h.changeCase.constant(theme_name) %>_VERSION, 'all');
-  	wp_enqueue_script('<%= h.changeCase.param(theme_name) %>-js', asset_path('scripts/main.js'), array('jquery'), <%= h.changeCase.constant(theme_name) %>_VERSION , true );
+  	wp_enqueue_script('<%= h.changeCase.param(theme_name) %>-js', asset_path('scripts/main.js'), array(), <%= h.changeCase.constant(theme_name) %>_VERSION , true );
 }
 
 /**

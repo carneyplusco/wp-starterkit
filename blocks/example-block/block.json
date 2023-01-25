@@ -1,0 +1,13 @@
+{
+	"apiVersion": 2,
+	"name": "example-block",
+	"title": "Example Block",
+	"description": "",
+	"category": "",
+	"acf": {
+        "mode": "preview",
+        "renderTemplate": "example-block.php"
+    },
+	"script": "example-block",
+	"style": "example-block"
+}

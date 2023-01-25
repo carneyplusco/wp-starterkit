@@ -2,4 +2,4 @@
 to: blocks/<%= name %>/<%= name %>.php
 ---
 <?php ?>
-<h1><%= name %></h1>
+<h1 class="<%= name %>"><%= title %></h1>
