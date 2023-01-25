@@ -3,11 +3,11 @@ to: functions.php
 ---
 <?php
 /**
- * <%= theme_name %> functions and definitions
+ * test-theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package <%= theme_name %>
+ * @package test-theme
  * @since 1.0.0
  */
 
@@ -43,48 +43,26 @@ add_theme_support('editor-color-palette', array(<% theme_colors.filter(color => 
  * Asset path helper
  */
 function asset_path($path) {
-	global $manifest;
-
-	$is_local = is_local();
-	if (!$is_local):
-    if (empty($manifest)):
-			$manifest_path = dirname(__FILE__) . '/dist/manifest.json';
-			$manifest = file_exists($manifest_path) ? json_decode(file_get_contents($manifest_path), true) : [];
-    endif;
-    $filename = pathinfo($path)['basename'];
-    $path = $manifest[$filename] ?? $path;
-	endif;
-
-	$asset_path = $is_local ? 'http://localhost:9000/assets' : get_stylesheet_directory_uri();
-	return "$asset_path/$path";
+	$asset_path = get_stylesheet_directory_uri() . '/dist/assets';
+  	return "$asset_path/$path";
 }
 
 /**
  * Inline SVG helper
  */
 
-function is_local() {
-  $is_dev = in_array(wp_get_environment_type(), ['local', 'development']);
-  return $is_dev && $_SERVER['HTTP_HOST'] == LOCAL_DOMAIN;
+function inline_svg($path)
+{
+	return file_get_contents(asset_path($path), false);
 }
-
-function inline_svg($path) {
-  $is_local = is_local();
-  $asset_path = asset_path($path);
-  $svg_path = $is_local ? str_replace('http://localhost:9000', dirname(__FILE__), $asset_path) : $asset_path;
-  $stream_context = $is_local ? stream_context_create([
-    'ssl' => [
-      'verify_peer'=> false,
-      'verify_peer_name'=> false,
-    ]
-  ]) : null;
-  return file_get_contents($svg_path, false, $stream_context);
-}
-
 /**
  * Setup theme
  */
 add_action('init', function() {
+
+	// this makes only the css from blocks on the page load, but it puts their css in the footer
+	add_filter('should_load_separate_core_block_assets', '__return_true');
+
 	add_post_type_support('page', 'excerpt');
 
   /**
@@ -113,7 +91,7 @@ add_action('init', function() {
   remove_theme_support("core-block-patterns");
 
   add_theme_support("editor-styles");
-  add_editor_style(asset_path("styles/main.css"));
+
 });
 
 /**
@@ -131,7 +109,7 @@ function <%= h.changeCase.snake(theme_name) %>_custom_block_styles($hook) {
 add_action('wp_enqueue_scripts', '<%= h.changeCase.snake(theme_name) %>_enqueue_assets', 15);
 function <%= h.changeCase.snake(theme_name) %>_enqueue_assets() {
 	wp_enqueue_style('<%= h.changeCase.param(theme_name) %>-css', asset_path('styles/main.css'), array(), <%= h.changeCase.constant(theme_name) %>_VERSION, 'all');
-  wp_enqueue_script('<%= h.changeCase.param(theme_name) %>-js', asset_path('scripts/main.js'), array('jquery'), <%= h.changeCase.constant(theme_name) %>_VERSION , true );
+  	wp_enqueue_script('<%= h.changeCase.param(theme_name) %>-js', asset_path('scripts/main.js'), array('jquery'), <%= h.changeCase.constant(theme_name) %>_VERSION , true );
 }
 
 /**
