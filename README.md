@@ -8,17 +8,19 @@
 
 1. Clone the repo into your themes directory:
 `npx degit git@github.com:carneyplusco/wp-starterkit.git your-project`
-1. Run the scaffold generator to fill in some defaults:
+2. Run the scaffold generator to fill in some defaults:
 `npx hygen scaffold new`
-
-1. From the theme directory, run `composer install` to install PHP packages/plugins
-1. From the theme directory, run `npm install` to install JS dependencies
+3. From the theme directory, run `composer install` to install PHP packages/plugins
+4. From the theme directory, run `npm install` to install JS dependencies
 
 ## Local Development
 
-1. Boot your WordPress install via Local/Docker/etc and run `npm start` from the theme directory to start the local development server
+Boot your WordPress install via Local/Docker/etc and run `npm start` from the theme directory to start the local development server
 
 > Your local domain is derived from the theme name. Check the `LOCAL_DOMAIN` constant in `functions.php`
+
+### Blocks
+Run the block generator `npx hygen block new` to create an ACF enabled custom block in the `/blocks` directory.
 
 ## Building
 
