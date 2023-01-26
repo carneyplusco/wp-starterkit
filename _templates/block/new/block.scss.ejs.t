@@ -1,6 +1,6 @@
 ---
-to: blocks/<%= name %>/<%= name %>.scss
+to: blocks/<%= title.toLowerCase().replace(' ', '-') %>/<%= title.toLowerCase().replace(' ', '-') %>.scss
 ---
-.<%= name %> {
+.<%= title.toLowerCase().replace(' ', '-') %> {
 
 }
