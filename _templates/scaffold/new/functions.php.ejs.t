@@ -96,6 +96,22 @@ add_action('init', function() {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', false);
 	}
+
+	// create admin-level developer role
+	$admin_capabilities = get_role('administrator')->capabilities;
+	add_role('developer', 'Developer', $admin_capabilities);
+
+	// hide ACF options for all users except developers
+	add_filter('acf/settings/show_admin', function() {
+		if (!is_user_logged_in()) {
+			return false;
+		}
+
+		global $current_user;
+    	$user_roles = $current_user->roles;
+
+		return in_array('developer', $user_roles);
+	});
 });
 
 /**
@@ -163,3 +179,43 @@ function custom_block_category($categories, $editor_context) {
 	}
 }
 add_filter('block_categories_all', 'custom_block_category', 10, 2);
+
+function contains($str, array $arr)
+{
+    foreach($arr as $a) {
+        if (stripos($str,$a) !== false) return true;
+    }
+    return false;
+}
+
+function get_block_styles($block) {
+	// we only use color so make sure the block it available
+	if (empty($block['style']) || empty($block['style']['color'])) {
+		return '';
+	}
+
+	$format_arr = ['hsl', '#', 'rgb'];
+
+	$background_color = !empty($block['style']['color']['background']) ? $block['style']['color']['background'] : '';
+	// if there is a gradient style selected, add it as the background color instead of the 
+	$has_gradient = !empty($block['style']['color']['gradient']);
+	$background_color = $has_gradient ? $block['style']['color']['gradient'] : $background_color;
+	$text_color = !empty($block['style']['color']['text']) ? $block['style']['color']['text'] : '';
+
+	// if the background or text color are named values instead of hsl, rgb or hex, we don't want to return a style and overwrite class colors, etc.
+	$background_color = contains($background_color, $format_arr) ? $background_color : '';
+
+	$text_color = contains($text_color, $format_arr) ? $text_color : '';
+	$background_style = '';
+	$text_style = '';
+
+	if ($background_color != '') {
+		$background_style = 'background: ' . $background_color . ';';
+	}
+
+	if ($text_color != '') {
+		$text_style = 'color: ' . $text_color . ';';
+	}
+
+	return $text_style . ' ' . $background_style;
+}

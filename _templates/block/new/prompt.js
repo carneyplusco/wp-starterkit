@@ -6,11 +6,6 @@ module.exports = [
 	},
 	{
 		type: "input",
-		name: "name",
-		message: "Enter the lower case, hyphen-separated block name.",
-	},
-	{
-		type: "input",
 		name: "description",
 		message: "Enter a block description.",
 	},
