@@ -1,16 +1,25 @@
 ---
-to: blocks/<%= name %>/block.json
+to: blocks/<%= title.toLowerCase().replace(' ', '-') %>/block.json
 ---
 {
 	"apiVersion": 2,
-	"name": "<%= name %>",
+	"name": "<%= title.toLowerCase().replace(' ', '-') %>",
 	"title": "<%= title %>",
 	"description": "<%= description %>",
 	"category": "",
 	"acf": {
         "mode": "preview",
-        "renderTemplate": "<%= name %>.php"
+        "renderTemplate": "<%= title.toLowerCase().replace(' ', '-') %>.php"
     },
-	"script": "<%= name %>",
-	"style": "<%= name %>"
+	"supports": {
+		"color" : {
+			"text" : true,
+			"background" : true,
+			"gradients" : true
+		},
+		"background" : true,
+		"anchor": true
+	},
+	"script": "<%= title.toLowerCase().replace(' ', '-') %>",
+	"style": "<%= title.toLowerCase().replace(' ', '-') %>"
 }
