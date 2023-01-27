@@ -1,7 +1,7 @@
 <?php
 
 // determine if a string contains any string from an array
-function str_contains($str, array $arr)
+function arr_in_string($str, array $arr)
 {
     foreach($arr as $a) {
         if (stripos($str,$a) !== false) return true;
@@ -28,9 +28,9 @@ function get_block_styles($block) {
 	$text_color = !empty($block['style']['color']['text']) ? $block['style']['color']['text'] : '';
 
 	// if the background or text color are named values instead of hsl, rgb or hex, we don't want to return a style and overwrite class colors, etc.
-	$background_color = str_contains($background_color, $format_arr) ? $background_color : '';
+	$background_color = arr_in_string($background_color, $format_arr) ? $background_color : '';
 
-	$text_color = str_contains($text_color, $format_arr) ? $text_color : '';
+	$text_color = arr_in_string($text_color, $format_arr) ? $text_color : '';
 	$background_style = '';
 	$text_style = '';
 
@@ -49,7 +49,12 @@ function get_block_styles($block) {
  * Asset path helper
  */
 function asset_path($path) {
-	$asset_path = get_stylesheet_directory_uri() . '/dist/assets';
+	if (is_dir(get_template_directory() . '/dist/blocks')) {
+		$asset_path = get_stylesheet_directory_uri() . '/dist/assets';
+	} else {
+		$asset_path = get_stylesheet_directory_uri() . '/dist';
+	}
+	
   	return "$asset_path/$path";
 }
 
