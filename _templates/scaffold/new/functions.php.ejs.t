@@ -19,7 +19,7 @@ define('LOCAL_DOMAIN', '<%= h.changeCase.param(theme_name) %>.local');
 array_map(function ($file) {
 	$filepath = "/includes/{$file}.php";
   require_once(get_stylesheet_directory() . $filepath);
-}, ['blocks', 'post-types', 'taxonomies']);
+}, ['blocks', 'post-types', 'taxonomies', 'user-roles']);
 
 /**
  * Define Constants
@@ -97,21 +97,6 @@ add_action('init', function() {
 		wp_register_script('jquery', false);
 	}
 
-	// create admin-level developer role
-	$admin_capabilities = get_role('administrator')->capabilities;
-	add_role('developer', 'Developer', $admin_capabilities);
-
-	// hide ACF options for all users except developers
-	add_filter('acf/settings/show_admin', function() {
-		if (!is_user_logged_in()) {
-			return false;
-		}
-
-		global $current_user;
-    	$user_roles = $current_user->roles;
-
-		return in_array('developer', $user_roles);
-	});
 });
 
 /**
