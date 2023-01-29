@@ -9,7 +9,7 @@ to: composer.json
     {
       "name": "Carney",
       "email": "dev.team@carney.co",
-      "homepage": "http://carney.co"
+      "homepage": "https://carney.co"
     }
   ],
   "keywords": [
