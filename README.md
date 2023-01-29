@@ -8,7 +8,7 @@
 
 1. Clone the repo into your themes directory:
 `npx degit git@github.com:carneyplusco/wp-starterkit.git your-project`
-2. Run the scaffold generator to fill in some defaults:
+2. From the theme directory, run the scaffold generator to fill in some defaults:
 `npx hygen scaffold new`
 3. From the theme directory, run `composer install` to install PHP packages/plugins
 4. From the theme directory, run `npm install` to install JS dependencies
@@ -37,7 +37,7 @@ Run `npm run deploy:ENV` from the theme directory to deploy where ENV is one of 
 ### ACF
 This theme is heavily dependent on ACF Pro and was developed assuming that any site that uses it also uses ACF Pro. If this is not the case, your mileage *will* vary.
 
-A custom Developer user role is added and is the only user role that can see the ACF Options page. 
+A custom Developer user role is added and is the only user role that can see the ACF Options page.
 
 ### Block Assets
 This theme by default utilizes the `should_load_separate_core_block_assets` filter in `init` within the generated `functions.php`. The positive effect of this is only scripts and styles relevant to blocks on the current page are loaded; the negative is styles specifically are loaded _after_ the `<footer>`, which can cause issues where content appears on the page before styles for it appear, aka cumulative layout shift or CLS. This is a tradeoff for smaller initial css load. To disable, remove this filter or change to `__return_true`. Disabling this will load all individually registered scripts on every page within the `<head>`.
