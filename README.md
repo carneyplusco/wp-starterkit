@@ -1,20 +1,17 @@
 # WP Starter Kit
-
-### Requirements
-
+## Requirements
 * Node 10+
 
-### Setup
-
+## Setup
 1. Clone the repo into your themes directory:
 `npx degit git@github.com:carneyplusco/wp-starterkit.git your-project`
 2. From the theme directory, run the scaffold generator to fill in some defaults:
 `npx hygen scaffold new`
+    *  Overrwite the current `.gitignore` if prompted
 3. From the theme directory, run `composer install` to install PHP packages/plugins
 4. From the theme directory, run `npm install` to install JS dependencies
 
 ## Local Development
-
 Boot your WordPress install via Local/Docker/etc and run `npm start` from the theme to watch build files and provide a hot reload service via `parcel`. By default, `parcel` watches the following directories and files and hot reloads on saving changes.
 
 * `assets/styles/main.scss`
@@ -23,15 +20,15 @@ Boot your WordPress install via Local/Docker/etc and run `npm start` from the th
 * All Javascript and SCSS files that do not begin with an `_` within all directories inside `blocks`
 
 > Your local domain is derived from the theme name. Check the `LOCAL_DOMAIN` constant in `functions.php`
-## Building
 
+### Building
 Run `npm run build` from the theme directory to compile assets for production
 
-## Deployment
-
+### Deployment
 Run `npm run deploy:ENV` from the theme directory to deploy where ENV is one of `staging` or `production`.
 
 > For now, deploys are done locally so be sure your master branch is up-to-date before deploying to production.
+
 ## Development Notes
 
 ### ACF
