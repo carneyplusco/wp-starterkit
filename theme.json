@@ -3,8 +3,26 @@
   "version": 2,
   "settings": {
     "layout": {
-      "contentSize": "1240px",
-      "wideSize": "1240px"
+      "contentSize": "1400px",
+      "wideSize": "1400px"
+    },
+    "spacing": {
+      "blockGap": false,
+      "units": [
+        "%",
+        "ch",
+        "vh",
+        "vw",
+        "em",
+        "rem"
+      ]
+    },
+    "spacingScale": {
+      "operator": "+",
+      "increment": 0.5,
+      "steps": 8,
+      "mediumStep": 1.5,
+      "unit": "rem"
     },
     "typography": {
 			"dropCap": false,
@@ -22,7 +40,80 @@
       ]
     },
     "color": {
-      "defaultPalette": false
+      "defaultPalette": false,
+      "defaultGradients": false
+    },
+    "blocks": {
+      "core/heading": {
+        "typography": {
+          "customFontSize": false,
+          "fontSizes": []
+        }
+      },
+      "core/paragraph": {
+        "typography": {
+          "customFontSize": true,
+          "fontSizes": []
+        }
+      },
+      "core/group": {
+				"spacing": {
+          "blockGap": true,
+					"padding": true,
+          "margin": true
+				}
+			},
+      "core/media-text": {
+				"spacing": {
+          "blockGap": true,
+					"padding": true,
+          "margin": true
+				}
+			},
+      "core/columns": {
+				"spacing": {
+          "blockGap": true,
+					"padding": true,
+          "margin": true
+				}
+			},
+      "core/column": {
+				"spacing": {
+          "blockGap": true,
+					"padding": true,
+          "margin": true
+				}
+			},
+      "core/buttons": {
+				"spacing": {
+          "blockGap": true,
+					"padding": true,
+          "margin": true
+				}
+			},
+      "core/button": {
+        "typography": {
+          "customFontSize": false,
+          "fontSizes": [],
+          "fontStyle": false,
+          "fontWeight": false,
+          "lineHeight": false,
+          "textTransform": false,
+          "letterSpacing": false,
+          "textDecoration": false
+        },
+        "border": {
+          "radius": false
+        },
+        "color": {
+          "text": false,
+          "custom": false
+        },
+        "spacing": {
+					"padding": false,
+          "margin": false
+				}
+      }
     }
   }
 }
