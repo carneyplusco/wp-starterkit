@@ -6,6 +6,19 @@ html,
 body {
   // Prevent .alignfull from adding a horizontal scrollbar
   overflow-x: hidden;
+
+  // Delightful!
+  ::-moz-selection {
+    background-color: $primary;
+    color: $white;
+    cursor: text;
+  }
+
+  ::selection {
+    background-color: $primary;
+    color: $white;
+    cursor: text;
+  }
 }
 
 img {
