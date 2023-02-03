@@ -1,5 +1,5 @@
 ---
-to: includes/patterns/query-cards.php
+to: patterns/query-cards.php
 ---
 <?php
 /**
