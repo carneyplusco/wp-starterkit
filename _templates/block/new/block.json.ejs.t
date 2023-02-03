@@ -7,10 +7,11 @@ to: blocks/<%= title.toLowerCase().replace(' ', '-') %>/block.json
 	"title": "<%= title %>",
 	"description": "<%= description %>",
 	"category": "",
+	"icon": "",
 	"acf": {
-        "mode": "preview",
-        "renderTemplate": "<%= title.toLowerCase().replace(' ', '-') %>.php"
-    },
+			"mode": "preview",
+			"renderTemplate": "<%= title.toLowerCase().replace(' ', '-') %>.php"
+	},
 	"supports": {
 		"color" : {
 			"text" : true,
