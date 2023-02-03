@@ -9,7 +9,7 @@ to: package.json
     "@babel/core": "^7.20.7",
     "@parcel/transformer-sass": "^2.8.2",
     "@prettier/plugin-php": "^0.17.6",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^5.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
