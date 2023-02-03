@@ -1,4 +1,4 @@
-// /* Shared */
+/* Shared */
 @import "common/variables";
 @import "common/functions";
 @import "common/mixins";
@@ -42,16 +42,20 @@
 @import "~bootstrap/scss/helpers";
 @import "~bootstrap/scss/utilities/api";
 
-// /* Other dependencies  */
+/* Other dependencies  */
 
-// /* Custom */
+/* Custom */
 @import "common/global";
 @import "common/type";
 @import "common/utility";
 @import "common/buttons";
-@import "common/blocks";
+@import "common/card";
+@import "common/pagination";
 @import "common/wp-classes";
-// @import "common/editor";
+
+@import "blocks-wp/media-text";
+@import "blocks-wp/post-terms";
+@import "blocks-wp/wp-block-post";
 
 @import "layouts/header";
 @import "layouts/footer";

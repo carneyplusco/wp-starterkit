@@ -1,0 +1,133 @@
+.wp-block-query-pagination {
+	display: flex;
+	gap: 0.5em;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	/* Numbers */
+	>.wp-block-query-pagination-numbers {
+		display: inline-flex;
+		gap: rem(8);
+		margin: 0;
+	}
+
+	.page-numbers {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@extend .btn;
+		@extend .btn-outline-primary;
+		font-weight: normal;
+		color: $primary;
+		border-color: $primary;
+		border-width: rem(1);
+		padding: 0;
+		height: rem(52);
+		width: rem(45);
+		border-radius: rem(26);
+
+		&.dots {
+			border: none;
+			background: transparent;
+			width: rem(24);
+		}
+
+		&:not(.dots) {
+
+			&:hover,
+			&:focus,
+			&:focus-visible,
+			&.current {
+				color: $white;
+				background-color: $primary;
+				text-decoration: none;
+			}
+		}
+	}
+
+	/*  Prev/Next */
+	.wp-block-query-pagination-next,
+	.wp-block-query-pagination-previous {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		text-indent: -9999px;
+		margin: 0;
+
+		svg {
+			transition: all 0.3s ease;
+			height: rem(32);
+			width: rem(32);
+		}
+
+		>span:last-of-type {
+			text-indent: 0;
+		}
+
+		&-arrow {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: normal;
+			color: $primary;
+			border: none;
+			padding: 0;
+			margin: 0;
+			height: rem(39);
+			width: rem(39);
+			transform: translate(0);
+			transition: all 0.2s ease;
+
+			&:hover,
+			&:focus,
+			&:focus-visible {
+				text-decoration: none;
+			}
+		}
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			text-decoration: none;
+		}
+
+		&--disabled {
+			pointer-events: none;
+			filter: grayscale(1);
+			opacity: 0.3;
+		}
+	}
+
+	.wp-block-query-pagination-next {
+		margin-left: 1.5rem;
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			svg {
+				transform: translateX(rem(5));
+			}
+		}
+	}
+
+	.wp-block-query-pagination-previous {
+		margin-right: 1.5rem;
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			svg {
+				transform: translateX(rem(-5));
+			}
+		}
+	}
+
+	.wp-block-query-pagination-next {
+		margin-left: 0.75rem;
+	}
+
+	.wp-block-query-pagination-previous {
+		margin-right: 0.75rem;
+	}
+}
