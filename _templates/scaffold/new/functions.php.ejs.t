@@ -70,11 +70,18 @@ add_action('init', function() {
   /**
    * Block editor features
    */
-  add_theme_support("align-wide");
-  add_theme_support("disable-custom-font-sizes");
+	// Remove default patterns
   remove_theme_support("core-block-patterns");
 
+	// Prevent loading patterns from the WordPress.org pattern directory
+  add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+  // Remove default block categories
+  unregister_block_pattern_category('buttons');
+
+  // Editor styles
   add_theme_support("editor-styles");
+  add_editor_style(asset_path("styles/editor.css"));
 
 	if (!is_user_logged_in()) {
 		wp_deregister_script('jquery');
