@@ -4,7 +4,7 @@ to: includes/patterns/query-cards.php
 <?php
 /**
  * Title: Query Cards
- * Slug: <%= title %>/query-cards
+ * Slug: "<%= title %>"/query-cards
  * Categories: query, layout
  * Description: Display queried posts in a pre-styled layout
  * Keywords: query, cards, posts
