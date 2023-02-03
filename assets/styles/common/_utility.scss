@@ -13,3 +13,13 @@
     }
   }
 }
+
+
+// Helpful wrapper when we want to modify output content from a WYSIWYG field, or <InnerBlocks/>
+.adjust-wysiwyg {
+
+  // Remove the margin bottom from the last child of this div; helpful when we want to remove the default margin-bottom of the <p> to better align our copy in the space
+  >*:last-child {
+    margin-bottom: 0 !important;
+  }
+}

@@ -12,20 +12,29 @@ $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
 /*
 // This comment block must be completed before `npm run start` can be performed; then you need to delete this line. Bai. :'(
 
+$black: #373737;
+$gray-500: #2d2d2e;
+$gray-400: #58595B;
+$gray-300: #808285;
+$gray-200: #BCBEC0;
+$gray-100: #E6E7E8;
+$white: #FFFFFF;
+$trans: rgba(255, 255, 255, 0);
+
 $primary: ;
 $secondary: ;
 $dark: ;
 $light: ;
 
-$body-color: ;
-$link-color: ;
+$body-color: $gray-500;
+$link-color: $primary;
 $color-contrast-dark: $black;
 $color-contrast-light: $white;
 
-$info: ;
-$success: ;
-$warn: ;
-$danger: ;
+$info: #17a2b8;
+$success: #28a745;
+$warn: #ffc107;
+$danger: #E31937;
 
 $theme-colors: (
   primary: $primary,
@@ -38,6 +47,11 @@ $theme-colors: (
   success: $success,
   warn: $warn,
   danger: $danger,
+  gray-100: $gray-100,
+  gray-200: $gray-200,
+  gray-300: $gray-300,
+  gray-400: $gray-400,
+  gray-500: $gray-500,
 );
 */
 
@@ -77,7 +91,7 @@ $display-line-height: $headings-line-height;
 */
 
 /* $paragraph-margin-bottom: 1rem; */
-$lead-font-size: rem(34);
+$lead-font-size: rem(20);
 $small-font-size: rem(14);
 $input-btn-font-size: $font-size-base;
 
@@ -88,13 +102,14 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1144px,
+  xl: 1200px,
+  xxl: 1400px
 );
 
 /* Remove other breakpoints so its a smooth transition between sizes */
-$container-max-width: rem(1240);
+$container-max-width: rem(1400);
 $container-max-widths: (
-  sm: 1240px,
+  sm: 1400px,
 );
 
 /** Spacing */
