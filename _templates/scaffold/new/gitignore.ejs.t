@@ -52,5 +52,4 @@ yarn-error.log
 .prettierrc
 .eslintrc
 .editorconfig
-.babelrc
 postcss.config.js
