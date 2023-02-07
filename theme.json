@@ -8,6 +8,12 @@
       "contentSize": "var(--bs-4-wp-content-max)",
       "wideSize": "var(--bs-4-wp-block-max)"
     },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
     "spacing": {
       "spacingSizes": [
         {
@@ -19,7 +25,8 @@
           "size": "var(--bs-4-wp-spacing-2)",
           "slug": "2",
           "name": "2"
-        },{
+        },
+        {
           "size": "var(--bs-4-wp-spacing-3)",
           "slug": "3",
           "name": "3"
@@ -61,17 +68,10 @@
         }
       ],
       "blockGap": false,
-      "units": [
-        "%",
-        "ch",
-        "vh",
-        "vw",
-        "em",
-        "rem"
-      ]
+      "units": ["%", "ch", "vh", "vw", "em", "rem"]
     },
     "typography": {
-			"dropCap": false,
+      "dropCap": false,
       "fontFamilies": [
         {
           "name": "Sans Serif",
@@ -93,9 +93,9 @@
       "core/heading": {
         "spacing": {
           "blockGap": false,
-					"padding": false,
+          "padding": false,
           "margin": false
-				},
+        },
         "typography": {
           "customFontSize": false,
           "fontSizes": []
@@ -104,57 +104,57 @@
       "core/paragraph": {
         "spacing": {
           "blockGap": false,
-					"padding": false,
+          "padding": false,
           "margin": false
-				},
+        },
         "typography": {
           "customFontSize": false,
           "fontSizes": []
         }
       },
       "core/group": {
-				"spacing": {
+        "spacing": {
           "blockGap": true,
-					"padding": true,
+          "padding": true,
           "margin": true
-				}
-			},
+        }
+      },
       "core/media-text": {
-				"spacing": {
+        "spacing": {
           "blockGap": true,
-					"padding": true,
+          "padding": true,
           "margin": true
-				}
-			},
+        }
+      },
       "core/columns": {
         "typography": {
           "customFontSize": false,
           "fontSizes": []
         },
-				"spacing": {
+        "spacing": {
           "blockGap": true,
-					"padding": true,
+          "padding": true,
           "margin": true
-				}
-			},
+        }
+      },
       "core/column": {
         "typography": {
           "customFontSize": false,
           "fontSizes": []
         },
-				"spacing": {
+        "spacing": {
           "blockGap": true,
-					"padding": true,
+          "padding": true,
           "margin": true
-				}
-			},
+        }
+      },
       "core/buttons": {
-				"spacing": {
+        "spacing": {
           "blockGap": true,
-					"padding": true,
+          "padding": true,
           "margin": true
-				}
-			},
+        }
+      },
       "core/button": {
         "typography": {
           "customFontSize": false,
@@ -174,9 +174,9 @@
           "custom": false
         },
         "spacing": {
-					"padding": false,
+          "padding": false,
           "margin": false
-				}
+        }
       }
     }
   },
@@ -191,54 +191,54 @@
       }
     },
     "blocks": {
-			"core/group": {
-				"spacing": {
-					"padding": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					},
+      "core/group": {
+        "spacing": {
+          "padding": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
           "margin": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					}
-				}
-			},
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          }
+        }
+      },
       "core/row": {
-				"spacing": {
-					"padding": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					},
+        "spacing": {
+          "padding": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
           "margin": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					}
-				}
-			},
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          }
+        }
+      },
       "core/stack": {
-				"spacing": {
-					"padding": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					},
+        "spacing": {
+          "padding": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
           "margin": {
-						"top": "0",
-						"right": "0",
-						"bottom": "0",
-						"left": "0"
-					}
-				}
-			}
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          }
+        }
+      }
     }
   }
 }
