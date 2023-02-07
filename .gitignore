@@ -5,3 +5,8 @@ functions.php
 package.json
 style.css
 assets/styles/common/_variables.scss
+.prettierrc
+.eslintrc
+.editorconfig
+.babelrc
+postcss.config.js

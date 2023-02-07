@@ -1,8 +1,0 @@
-{
-	"env": {
-		// remove console logs in production for... reasons...
-		"production": {
-			"plugins": ["transform-remove-console"]
-		}
-	}
-}
