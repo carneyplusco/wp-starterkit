@@ -2,72 +2,84 @@ body.editor-styles-wrapper .wp-block-media-text,
 .wp-block-media-text {
 	overflow-x: hidden;
 
-	// Widen space between media and text
+	// Default
 	.wp-block-media-text__content {
 		@extend .adjust-wysiwyg;
-		word-break: normal;
-		padding-right: calc($grid-gutter-width * 0.5);
-		padding-left: calc($grid-gutter-width * 0.5);
-		padding-top: min(7vh, calc($grid-gutter-width * 2));
-		padding-bottom: min(7vh, calc($grid-gutter-width * 2));
+		padding-right: var(--bs-4-wp-gutter) !important;
+		padding-left: var(--bs-4-wp-gutter) !important;
 
 		@include media-breakpoint-up(md) {
-			padding-left: min(20%, rem(120)) !important;
-			padding-right: max(4%, 50vw - 660px) !important;
+			padding-left: 0 !important;
+			padding-right: #{$grid-gutter-width} !important;
 		}
 
-		&.block-editor-block-list__layout {
-			padding-left: 2rem !important;
-			padding-right: 2rem !important;
+		&.has-media-on-the-right {
+			.wp-block-media-text__content {
+				@include media-breakpoint-up(md) {
+					padding-right: var(--bs-4-wp-gutter) !important;
+					padding-left: var(--bs-4-wp-gutter) !important;
+
+					&.block-editor-block-list__layout {
+						padding-left: #{$grid-gutter-width} !important;
+						padding-right: 0 !important;
+					}
+				}
+			}
 		}
 	}
 
-	&.has-media-on-the-right {
-		.wp-block-media-text__content {
-			--left-padding: calc(#{$grid-gutter-width} * 0.5);
-			--right-padding: calc(#{$grid-gutter-width} * 0.5);
-			padding-left: var(--left-padding);
-			padding-right: var(--right-padding);
 
-			@include media-breakpoint-up(md) {
-				--left-padding: 8%;
-				--right-padding: calc(#{$grid-gutter-width} * 2.5);
-				padding-left: max(4%, 50vw - 660px) !important;
-				padding-right: min(20%, rem(120)) !important;
+	// Up the breakpoint for stacking switch and move the image to the top
+	@include media-breakpoint-down(md) {
+
+		&.is-stacked-on-mobile {
+			height: 100% !important;
+			min-height: unset !important;
+			grid-template-columns: 100% !important;
+
+			.wp-block-media-text__content {
+				grid-column: 1;
+				grid-row: 2;
+				width: 100%;
+				max-width: none;
+				margin: 1.5rem 0 2rem 0;
 			}
 
-			&.block-editor-block-list__layout {
-				padding-left: 2rem !important;
-				padding-right: 2rem !important;
-			}
-		}
-
-
-
-		// Up the breakpoint for stacking switch and move the image to the top
-		@include media-breakpoint-down(md) {
-
-			&.is-stacked-on-mobile {
-				height: 100% !important;
-				min-height: unset !important;
-				grid-template-columns: 100% !important;
-
-				.wp-block-media-text__content {
-					grid-column: 1;
-					grid-row: 2;
-					width: 100%;
-					max-width: none;
-					margin: 1.5rem 0 2rem 0;
-				}
-
-				.wp-block-media-text__media {
-					grid-column: 1;
-					grid-row: 1;
-					min-height: 40vh;
-				}
+			.wp-block-media-text__media {
+				grid-column: 1;
+				grid-row: 1;
+				min-height: rem(305);
 			}
 		}
 	}
 
 	/** Styles */
+	// May need to adjust per theme
+	&.is-style-contained {
+		.wp-block-media-text__content {
+			@include media-breakpoint-up(md) {
+				padding-left: min(20%, rem(120)) !important;
+				padding-right: max(4%, 50vw - 660px) !important;
+
+				&.block-editor-block-list__layout {
+					padding-left: 8% !important;
+					padding-right: 8% !important;
+				}
+			}
+		}
+
+		&.has-media-on-the-right {
+			.wp-block-media-text__content {
+				@include media-breakpoint-up(md) {
+					padding-left: max(4%, 50vw - 660px) !important;
+					padding-right: min(20%, rem(120)) !important;
+
+					&.block-editor-block-list__layout {
+						padding-left: 8% !important;
+						padding-right: 8% !important;
+					}
+				}
+			}
+		}
+	}
 }

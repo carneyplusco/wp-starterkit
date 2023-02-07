@@ -20,12 +20,16 @@ wp.domReady(() => {
       name: "lead",
       label: "Lead",
     },
-  ]);
-
-  wp.blocks.registerBlockStyle("core/paragraph", [
     {
       name: "small",
       label: "Small",
+    },
+  ]);
+
+  wp.blocks.registerBlockStyle("core/media-text", [
+    {
+      name: "contained",
+      label: "Contained",
     },
   ]);
 });
