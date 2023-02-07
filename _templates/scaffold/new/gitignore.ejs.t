@@ -49,3 +49,8 @@ yarn-error.log
 /vendor
 .parcel-cache
 .vscode
+.prettierrc
+.eslintrc
+.editorconfig
+.babelrc
+postcss.config.js

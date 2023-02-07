@@ -2,9 +2,9 @@
 to: composer.json
 ---
 {
-  "name": "carney/<%= h.changeCase.param(theme_name) %>",
+  "name": "carney/test-theme",
   "license": "MIT",
-  "description": "Composer packages for <%= theme_name %>",
+  "description": "Composer packages for Test Theme",
   "authors": [
     {
       "name": "Carney",
@@ -42,6 +42,14 @@ to: composer.json
   "extra": {
     "installer-paths": {
       "../../plugins/{$name}": ["type:wordpress-plugin"]
+    }
+  },
+  "require-dev": {
+    "php-stubs/acf-pro-stubs": "^6.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
     }
   }
 }
