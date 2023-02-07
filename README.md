@@ -10,6 +10,7 @@
     *  Overrwite the current `.gitignore` if prompted
 3. From the theme directory, run `composer install` to install PHP packages/plugins
 4. From the theme directory, run `npm install` to install JS dependencies
+5. Before running the project, uncomment the commented variables section in `_variables.scss` and update the vars as needed. This is because we need the `$theme-colors` set before the SCSS can compile.
 
 ## Local Development
 Boot your WordPress install via Local/Docker/etc and run `npm start` from the theme to watch build files and provide a hot reload service via `parcel`. By default, `parcel` watches the following directories and files and hot reloads on saving changes.
