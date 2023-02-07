@@ -1,11 +1,8 @@
 {
 	"env": {
-		"development": {
-			"plugins": []
-		},
 		// remove console logs in production for... reasons...
 		"production": {
-			// "plugins": ["transform-remove-console"]
+			"plugins": ["transform-remove-console"]
 		}
 	}
 }

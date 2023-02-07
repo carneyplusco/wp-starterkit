@@ -16,7 +16,8 @@ to: package.json
     "parcel": "^2.8.2",
     "prettier": "^2.5.1",
     "prettier-eslint": "^11.0.0",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+	"babel-plugin-transform-remove-console": "^6.9.4"
   },
   "scripts": {
 	"clean": "rm -rf dist/ && rm -rf .parcel-cache",

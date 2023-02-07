@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 composer.json
 functions.php
 package.json

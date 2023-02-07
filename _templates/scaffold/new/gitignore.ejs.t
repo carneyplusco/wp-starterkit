@@ -48,3 +48,4 @@ npm-debug.log
 yarn-error.log
 /vendor
 .parcel-cache
+.vscode
