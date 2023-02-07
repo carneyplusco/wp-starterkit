@@ -96,7 +96,7 @@ $small-font-size: rem(14);
 $input-btn-font-size: $font-size-base;
 
 /** Grid */
-$grid-gutter-width: 1rem;
+$grid-gutter-width: 2rem;
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -130,6 +130,18 @@ $spacers: (
 );
 $negative-spacers: negativify-map($spacers);
 $gutters: $spacers;
+
+/* Spacing CSS vars for WP */
+:root {
+  --bs-4-wp-content-max: #{$container-max-width};
+  --bs-4-wp-block-max: #{$container-max-width};
+  --bs-4-wp-gutter: calc(#{$grid-gutter-width} * .5);
+
+  @each $space,
+  $value in $spacers {
+    --bs-4-wp-spacing-#{$space}: #{$value};
+  }
+}
 
 /** Utility */
 $overflows: auto, hidden, visible;

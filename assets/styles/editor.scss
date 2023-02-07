@@ -16,9 +16,6 @@
 	font-size: $font-size-base;
 	color: $body-color;
 	line-height: $line-height-base;
-	overflow-x: hidden;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
 
 	@import "~bootstrap/scss/reboot";
 	@import "~bootstrap/scss/type";
@@ -72,15 +69,6 @@
 // Body gets converted to ".editor-styles-wrapper" so no need to add here
 // https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
 body {
-
-	// Adjust alignfull
-	[data-align="full"],
-	.alignfull,
-	.alignfull.swiper {
-		width: 100% !important;
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
 
 	// Remove underlines from ACF links, such as when it's in a plus icon of a repeater
 	.acf-fields a {

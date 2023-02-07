@@ -2,11 +2,64 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
   "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
     "layout": {
-      "contentSize": "1400px",
-      "wideSize": "1400px"
+      "contentSize": "var(--bs-4-wp-content-max)",
+      "wideSize": "var(--bs-4-wp-block-max)"
     },
     "spacing": {
+      "spacingSizes": [
+        {
+          "size": "var(--bs-4-wp-spacing-1)",
+          "slug": "1",
+          "name": "1"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-2)",
+          "slug": "2",
+          "name": "2"
+        },{
+          "size": "var(--bs-4-wp-spacing-3)",
+          "slug": "3",
+          "name": "3"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-4)",
+          "slug": "4",
+          "name": "4"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-5)",
+          "slug": "5",
+          "name": "5"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-6)",
+          "slug": "6",
+          "name": "6"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-sm)",
+          "slug": "7",
+          "name": "7"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-md)",
+          "slug": "8",
+          "name": "8"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-lg)",
+          "slug": "9",
+          "name": "9"
+        },
+        {
+          "size": "var(--bs-4-wp-spacing-xl)",
+          "slug": "10",
+          "name": "10"
+        }
+      ],
       "blockGap": false,
       "units": [
         "%",
@@ -16,13 +69,6 @@
         "em",
         "rem"
       ]
-    },
-    "spacingScale": {
-      "operator": "+",
-      "increment": 0.5,
-      "steps": 8,
-      "mediumStep": 1.5,
-      "unit": "rem"
     },
     "typography": {
 			"dropCap": false,
@@ -45,14 +91,24 @@
     },
     "blocks": {
       "core/heading": {
+        "spacing": {
+          "blockGap": false,
+					"padding": false,
+          "margin": false
+				},
         "typography": {
           "customFontSize": false,
           "fontSizes": []
         }
       },
       "core/paragraph": {
+        "spacing": {
+          "blockGap": false,
+					"padding": false,
+          "margin": false
+				},
         "typography": {
-          "customFontSize": true,
+          "customFontSize": false,
           "fontSizes": []
         }
       },
@@ -71,6 +127,10 @@
 				}
 			},
       "core/columns": {
+        "typography": {
+          "customFontSize": false,
+          "fontSizes": []
+        },
 				"spacing": {
           "blockGap": true,
 					"padding": true,
@@ -78,6 +138,10 @@
 				}
 			},
       "core/column": {
+        "typography": {
+          "customFontSize": false,
+          "fontSizes": []
+        },
 				"spacing": {
           "blockGap": true,
 					"padding": true,
@@ -114,6 +178,67 @@
           "margin": false
 				}
       }
+    }
+  },
+  "styles": {
+    "spacing": {
+      "blockGap": "var(--wp--preset--spacing--4)",
+      "padding": {
+        "top": "0",
+        "right": "var(--wp--preset--spacing--4)",
+        "bottom": "0",
+        "left": "var(--wp--preset--spacing--4)"
+      }
+    },
+    "blocks": {
+			"core/group": {
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					},
+          "margin": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					}
+				}
+			},
+      "core/row": {
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					},
+          "margin": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					}
+				}
+			},
+      "core/stack": {
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					},
+          "margin": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					}
+				}
+			}
     }
   }
 }
