@@ -8,6 +8,8 @@ to: assets/styles/common/_variables.scss
 /** Colors */
 <% theme_colors.filter(color => color !== '').forEach(color => { %><% const [colorName, colorHex] = color.split(': ') %>
 $<%= h.changeCase.param(colorName) %>: <%= colorHex %>;<% }) %>
+$black: #000000;
+$white: #ffffff;
 
 /*
 // This comment block must be completed before `npm run start` can be performed; then you need to delete this line. Bai. :'(

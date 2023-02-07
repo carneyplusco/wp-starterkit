@@ -20,7 +20,6 @@ function get_block_styles($block) {
 
 	// array used to test if color is a named or programmatic color
 	$format_arr = ['hsl', '#', 'rgb'];
-
 	$background_color = !empty($block['style']['color']['background']) ? $block['style']['color']['background'] : '';
 	// if there is a gradient style selected, add it as the background color instead of the 
 	$has_gradient = !empty($block['style']['color']['gradient']);
@@ -49,6 +48,7 @@ function get_block_styles($block) {
  * Asset path helper
  */
 function asset_path($path) {
+	// structure of dist directory changes based on whether or not ./blocks is empty before build, so test here
 	if (is_dir(get_template_directory() . '/dist/blocks')) {
 		$asset_path = get_stylesheet_directory_uri() . '/dist/assets';
 	} else {
