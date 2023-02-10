@@ -14,7 +14,6 @@
   }
 }
 
-
 // Helpful wrapper when we want to modify output content from a WYSIWYG field, or <InnerBlocks/>
 .adjust-wysiwyg {
 
@@ -22,4 +21,16 @@
   >*:last-child {
     margin-bottom: 0 !important;
   }
+}
+
+// Skip to content placement
+a#skip-to-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  z-index: 10000;
+  background-color: $primary;
+  @extend .link-white;
 }
