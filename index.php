@@ -114,7 +114,7 @@
 			<?php if (is_paginated()) : ?>
 			<div class="row">
 				<div class="col-12 mt-3">
-					<?php get_template_part('templates/parts/pagination'); ?>
+					<?php get_template_part('templates/parts/wp-block-query-pagination'); ?>
 				</div>
 			</div>
 			<?php endif; ?>

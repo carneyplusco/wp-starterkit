@@ -25,7 +25,7 @@
 @import "~bootstrap/scss/card";
 // @import "~bootstrap/scss/accordion";
 // @import "~bootstrap/scss/breadcrumb";
-@import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/pagination";
 // @import "~bootstrap/scss/badge";
 // @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
@@ -55,6 +55,7 @@
 @import "blocks-wp/media-text";
 @import "blocks-wp/post-terms";
 @import "blocks-wp/wp-block-post";
+@import "blocks-wp/wp-block-query-pagination";
 
 @import "layouts/header";
 @import "layouts/footer";

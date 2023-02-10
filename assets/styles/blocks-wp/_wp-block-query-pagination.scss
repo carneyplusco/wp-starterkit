@@ -1,3 +1,5 @@
+$pager-size: rem(42);
+
 .wp-block-query-pagination {
 	display: flex;
 	gap: 0.5em;
@@ -13,24 +15,17 @@
 	}
 
 	.page-numbers {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		@extend .btn;
 		@extend .btn-outline-primary;
-		font-weight: normal;
-		color: $primary;
-		border-color: $primary;
-		border-width: rem(1);
+		justify-content: center;
 		padding: 0;
-		height: rem(52);
-		width: rem(45);
-		border-radius: rem(26);
+		height: $pager-size;
+		width: $pager-size;
 
 		&.dots {
 			border: none;
 			background: transparent;
-			width: rem(24);
+			width: $pager-size;
 		}
 
 		&:not(.dots) {
@@ -50,15 +45,15 @@
 	.wp-block-query-pagination-next,
 	.wp-block-query-pagination-previous {
 		display: flex;
-		align-items: center;
+		justify-content: center;
 		text-decoration: none;
 		text-indent: -9999px;
 		margin: 0;
 
 		svg {
 			transition: all 0.3s ease;
-			height: rem(32);
-			width: rem(32);
+			height: calc($pager-size * .5);
+			width: calc($pager-size * .5);
 		}
 
 		>span:last-of-type {
@@ -66,68 +61,56 @@
 		}
 
 		&-arrow {
-			display: inline-flex;
+			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-weight: normal;
 			color: $primary;
-			border: none;
-			padding: 0;
+			transform: none !important;
 			margin: 0;
-			height: rem(39);
-			width: rem(39);
-			transform: translate(0);
-			transition: all 0.2s ease;
+			height: $pager-size;
+			width: $pager-size;
+			transition: color 0.2s ease;
 
 			&:hover,
 			&:focus,
 			&:focus-visible {
+				color: $gray-300;
 				text-decoration: none;
 			}
 		}
+	}
 
-		&:hover,
-		&:focus,
-		&:focus-visible {
-			text-decoration: none;
-		}
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		text-decoration: none;
+	}
 
-		&--disabled {
-			pointer-events: none;
-			filter: grayscale(1);
-			opacity: 0.3;
-		}
+	&--disabled {
+		pointer-events: none;
+		filter: grayscale(1);
+		opacity: 0.3;
 	}
 
 	.wp-block-query-pagination-next {
-		margin-left: 1.5rem;
 
 		&:hover,
 		&:focus,
 		&:focus-visible {
 			svg {
-				transform: translateX(rem(5));
+				transform: translateX(rem(3));
 			}
 		}
 	}
 
 	.wp-block-query-pagination-previous {
-		margin-right: 1.5rem;
 
 		&:hover,
 		&:focus,
 		&:focus-visible {
 			svg {
-				transform: translateX(rem(-5));
+				transform: translateX(rem(-3));
 			}
 		}
-	}
-
-	.wp-block-query-pagination-next {
-		margin-left: 0.75rem;
-	}
-
-	.wp-block-query-pagination-previous {
-		margin-right: 0.75rem;
 	}
 }
