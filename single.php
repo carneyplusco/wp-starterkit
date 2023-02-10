@@ -48,7 +48,7 @@ while (have_posts()) :
 
 					<?php if(!empty(get_the_terms($post->ID, $cat_taxonomy))): ?>
 					<div class="mb-4">
-						<?php get_template_part("templates/parts/categories", null, ['taxonomy' => $cat_taxonomy]); ?>
+						<?php get_template_part("templates/parts/wp-block-post-terms", null, ['taxonomy' => $cat_taxonomy]); ?>
 					</div>
 					<?php endif; ?>
 
