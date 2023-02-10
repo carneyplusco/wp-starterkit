@@ -19,7 +19,7 @@ define('LOCAL_DOMAIN', '<%= h.changeCase.param(theme_name) %>.local');
 array_map(function ($file) {
 	$filepath = "/includes/{$file}.php";
   require_once(get_stylesheet_directory() . $filepath);
-}, ['utilities', 'blocks', 'post-types', 'taxonomies', 'user-roles']);
+}, ['utilities', 'blocks', 'post-types', 'taxonomies', 'options-pages', 'user-roles']);
 
 /**
  * Define Constants
@@ -155,3 +155,17 @@ function custom_block_category($categories, $editor_context) {
 	}
 }
 add_filter('block_categories_all', 'custom_block_category', 10, 2);
+
+/**
+ * Rewrite rules for Resources
+ */
+add_action('generate_rewrite_rules', function($wp_rewrite){
+  // TODO: Make this dynamic; not working but I suspect it had to do with timing...
+  $news_archive = get_post_type_object('news-item');
+  $news_archive_slug = $post_type_data->rewrite['slug'];
+
+  $new_rules = array(
+    'resources/news/c/([^/]+)/?$' => 'index.php?news-item-tax=' . $wp_rewrite->preg_index(1), // '/resources/news/c/CAT/'
+  );
+  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+});
