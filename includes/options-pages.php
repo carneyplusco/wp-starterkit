@@ -14,11 +14,11 @@ add_action('init', function () {
     ));
 
     // News Archive Settings - Example
-    acf_add_options_sub_page(array(
-      'page_title' 	=> __('News Items Archive Settings'),
-      'menu_title'	=> __('News Archive'),
-      'parent_slug'	=> 'edit.php?post_type=news-item',
-      'post_id'   => 'news_items_settings'
-	  ));
+    // acf_add_options_sub_page(array(
+    //   'page_title' 	=> __('News Items Archive Settings'),
+    //   'menu_title'	=> __('News Archive'),
+    //   'parent_slug'	=> 'edit.php?post_type=news-item',
+    //   'post_id'   => 'news_items_settings'
+	  // ));
   };
 });

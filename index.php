@@ -83,9 +83,9 @@
 
                   foreach($cats as $cat){
                     $is_selected = '';
-                    if($current === $cat->slug) {
-                      $is_selected = ' fw-bold';
-                    }
+										if (!empty($current) && $current === $cat->slug) {
+											$is_selected = ' fw-bold';
+										}
                     echo '<a href="' . esc_attr( get_category_link( $cat->term_id ) ) . '" class="'.$is_selected.'">' . __( $cat->name ) . '</a>';
                   }
                 ?>
