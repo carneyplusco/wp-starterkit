@@ -17,15 +17,17 @@
 
 		<?php wp_body_open() ?>
 
+		<?php if (!get_field('hide_header')) : ?>
 		<header class="top">
 			<nav class="has-global-padding is-layout-constrained">
 				<?php
-        wp_nav_menu([
-          'theme_location'  => 'primary_navigation',
-          'menu_class'      => 'list-unstyled'
-        ]);
-      ?>
+						wp_nav_menu([
+							'theme_location'  => 'primary_navigation',
+							'menu_class'      => 'list-unstyled'
+						]);
+					?>
 			</nav>
 		</header>
+		<?php endif; ?>
 
 		<main id="content">
