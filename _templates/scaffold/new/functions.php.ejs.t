@@ -84,7 +84,7 @@ function inline_svg($path) {
 /**
  * Setup theme
  */
-add_action('init', function() {
+add_action('after_setup_theme', function() {
 	add_post_type_support('page', 'excerpt');
 
   /**
