@@ -1,24 +1,47 @@
 @for $i from 1 through 6 {
-  .is-style-h#{$i} {
-    @extend .h#{$i} !optional;
-  }
+	.is-style-h#{$i} {
+		@extend .h#{$i} !optional;
+	}
 
-  @each $infix,
-  $color in $theme-colors {
-    .text-#{"" + $infix} h#{$i} {
-      color: $color;
-    }
-  }
+	@each $infix, $color in $theme-colors {
+		.text-#{"" + $infix} h#{$i} {
+			color: $color;
+		}
+	}
 }
 
 .is-style-lead {
-  @extend .lead;
+	@extend .lead;
 }
 
 .is-style-small {
-  @extend .small;
+	@extend .small;
 }
 
 mark {
-  padding: 0;
+	padding: 0;
+}
+
+a.external-link {
+	display: inline;
+
+	&::after {
+		content: "";
+		mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjEgMTN2MTBoLTIxdi0xOWgxMnYyaC0xMHYxNWgxN3YtOGgyem0zLTEyaC0xMC45ODhsNC4wMzUgNC02Ljk3NyA3LjA3IDIuODI4IDIuODI4IDYuOTc3LTcuMDcgNC4xMjUgNC4xNzJ2LTExeiIvPjwvc3ZnPg==");
+		mask-size: contain;
+		background: currentColor;
+		opacity: 0.8;
+		display: inline-block;
+		position: relative;
+		margin-left: 0.25em;
+		height: 0.75rem;
+		width: 0.75rem;
+	}
+
+	&.wp-block-button__link,
+	&.btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
