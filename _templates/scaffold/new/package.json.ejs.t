@@ -22,8 +22,8 @@ to: package.json
   "scripts": {
 	"clean": "rm -rf dist/ && rm -rf .parcel-cache",
     "start": "npm run clean && parcel watch 'blocks/**/*[scss, js]' 'assets/scripts/*.js' 'assets/styles/main.scss' 'assets/styles/editor.scss' 'assets/images/*' --no-source-maps",
-    "build": "rm -rf dist/ && rm -rf .parcel-cache && npx parcel build 'assets/scripts/*.js' 'assets/styles/main.scss' 'assets/styles/editor.scss' 'assets/images/*' --no-source-maps",
-    "deploy:staging": "rsync -azvh --progress --exclude '.git' --exclude 'node_modules' --exclude 'assets' --exclude '.parcel-cache' . <%= h.changeCase.param(staging_server) %>:/home/master/applications/<%= h.changeCase.param(application_name) %>/public_html/wp-content/themes/<%= h.changeCase.param(theme_name) %> --delete-after"
+    "build": "npm run clean && parcel build 'blocks/**/*[scss, js]' 'assets/scripts/*.js' 'assets/styles/main.scss' 'assets/styles/editor.scss' 'assets/images/*' --no-source-maps",
+    "deploy:staging": "rsync -azvh --progress --exclude '.git' --exclude 'node_modules' --exclude './assets' --exclude '.parcel-cache' . <%= h.changeCase.param(staging_server) %>:/home/master/applications/<%= h.changeCase.param(application_name) %>/public_html/wp-content/themes/<%= h.changeCase.param(theme_name) %> --delete-after"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "author": "Carney",

@@ -3,16 +3,17 @@ to: blocks/<%= title.toLowerCase().replace(' ', '-') %>/<%= title.toLowerCase().
 ---
 <% functionName = 'init' + title.replace(/(?:^\w|[A-Z]|\b\w)/g, (ltr, idx) => ltr.toUpperCase()).replace(/\s+/g, ''); %>
 window.addEventListener('DOMContentLoaded', () => {
-	const isAdmin = window.acf !== undefined;
+	const isEditor =
+		typeof wp !== "undefined" && typeof wp.blocks !== "undefined";
 
 	if (document.readyState == 'interactive' || document.readystate == 'complete') {
-			<%= functionName %>(isAdmin);
+			<%= functionName %>(isEditor);
 	}
 })
 
-function <%= functionName %>(isAdmin) {
+function <%= functionName %>(isEditor) {
 	// add block code here
-	if (isAdmin) {
+	if (isEditor) {
 		console.log("new-block block ready in editor");
 	} else {
 		console.log("new-block block ready in front end");

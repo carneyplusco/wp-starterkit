@@ -1,15 +1,18 @@
+window.addEventListener("DOMContentLoaded", () => {
+	const isEditor =
+		typeof wp !== "undefined" && typeof wp.blocks !== "undefined";
 
-window.addEventListener('DOMContentLoaded', () => {
-	const isAdmin = window.acf !== undefined;
-
-	if (document.readyState == 'interactive' || document.readystate == 'complete') {
-			initExampleBlock(isAdmin);
+	if (
+		document.readyState == "interactive" ||
+		document.readystate == "complete"
+	) {
+		initExampleBlock(isEditor);
 	}
-})
+});
 
-function initExampleBlock(isAdmin) {
+function initExampleBlock(isEditor) {
 	// add block code here
-	if (isAdmin) {
+	if (isEditor) {
 		console.log("new-block block ready in editor");
 	} else {
 		console.log("new-block block ready in front end");

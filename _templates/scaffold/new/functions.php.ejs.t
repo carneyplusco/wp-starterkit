@@ -42,7 +42,7 @@ add_theme_support('editor-color-palette', array(<% theme_colors.filter(color => 
 /**
  * Setup theme
  */
-add_action('init', function() {
+add_action('after_setup_theme', function() {
 
 	// this makes only the css from blocks on the page load, but it puts their css in the footer
 	add_filter('should_load_separate_core_block_assets', '__return_true');
